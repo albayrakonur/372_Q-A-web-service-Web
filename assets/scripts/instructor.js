@@ -16,12 +16,12 @@ $(document).ready(function() {
     var userRoleSection = document.getElementById("userRoleHolder");
     usernameSection.innerHTML = username;
     userRoleSection.innerHTML = userRole;
-    if (!username && !userRole) {
+    if (!username && userRole != "Instructors" ) {
         document.getElementById("UserOn").style.display = "none";
         document.getElementById("navbarUserOn").style.display = "none";
         document.getElementById("UserOff").style.display = "inline";
 
-    }else if(username && userRole){
+    }else if(username &&  userRole != "Instructors"){
         document.getElementById("UserOff").style.display = "none";
         document.getElementById("UserOn").style.display = "inline";
         document.getElementById("navbarUserOn").style.display = "inline";
@@ -29,6 +29,14 @@ $(document).ready(function() {
     }
     var CourseList = document.getElementById("coursesList");
     var userCourseList = "";
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    if (window.location.href.includes("course.html")) {
+        var idParam = url.searchParams.get("id");
+        var resources = document.getElementById("resourcesLink");
+        resources.innerHTML = "<a class=\"nav-link\" href=\"resources.html?id=" + idParam + "\">Resources</a>\n";
+    }
+
     $.ajax({
         async: true,
         crossDomain: true,

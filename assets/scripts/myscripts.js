@@ -1,23 +1,56 @@
 $( document ).ready(function() {
+    var cookies = document.cookie.split(";");
+    var username = "";
+    var userRole = "";
+    for (var i = 0; i < cookies.length; i++) {
+        if (cookies[i].includes("username")) {
+            var usernameCookie = cookies[i].split("=");
+            username = usernameCookie[1];
+        }
+        if (cookies[i].includes(("userRole"))) {
+            var userRoleCookie = cookies[i].split("=");
+            userRole = userRoleCookie[1];
+        }
+    }
+    var usernameSection = document.getElementById("usernameHolder");
+    var userRoleSection = document.getElementById("userRoleHolder");
+    usernameSection.innerHTML = username;
+    userRoleSection.innerHTML = userRole;
+    if (!username &&  userRole != "Student") {
+        document.getElementById("UserOn").style.display = "none";
+        document.getElementById("navbarUserOn").style.display = "none";
+        document.getElementById("UserOff").style.display = "inline";
+
+    }else if(username && userRole == "Student"){
+        document.getElementById("UserOff").style.display = "none";
+        document.getElementById("UserOn").style.display = "inline";
+        document.getElementById("navbarUserOn").style.display = "inline";
+
+    }
+    var CourseList = document.getElementById("coursesList");
+    var userCourseList = "";
     var url_string = window.location.href;
     var url = new URL(url_string);
-    var idParam = url.searchParams.get("id");
-    var courseList = document.getElementById("coursesList");
-    var list = "";
+    if (window.location.href.includes("course.html")) {
+        var idParam = url.searchParams.get("id");
+        var resources = document.getElementById("resourcesLink");
+        resources.innerHTML = "<a class=\"nav-link\" href=\"resources.html?id=" + idParam + "\">Resources</a>\n";
+    }
+
     $.ajax({
         async: true,
         crossDomain: true,
-        url: "https://mergen-etu.herokuapp.com/courses/",
-        type: "GET",
+        url: "https://mergen-etu.herokuapp.com/courses",
+        method: "GET",
         headers: {},
-        success: function(data, textStatus, response){
+        success: function (data, textStatus, response) {
             for (var i = 0; i < data.length; i++) {
-                list += "<a class=\"dropdown-item\" href=\"" + "course.html?id=" + data[i].id + "\">" + data[i].courseName + "</a>"
+                userCourseList += "<a class=\"dropdown-item\" href=\"" + "course.html?id=" + data[i].id + "\">" + data[i].courseName + "</a>"
             }
-            courseList.innerHTML = list;
+            CourseList.innerHTML = userCourseList;
         },
         error: function (xhr, status, err) {
-            alert("error");
+            alert("Error");
         }
     });
 
@@ -63,6 +96,16 @@ $(function() {
 
     });
 });
+
+function removeCookies() {
+    var res = document.cookie;
+    var multiple = res.split(";");
+    for(var i = 0; i < multiple.length; i++) {
+        var key = multiple[i].split("=");
+        document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+    }
+    window.location.href = "login.html";
+}
 
 (function($) {
 

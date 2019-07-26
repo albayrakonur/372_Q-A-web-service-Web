@@ -55,7 +55,7 @@
         </div>
         <div class="app-header__content">
             <div class="app-header__content">
-                <div class="app-header-left">
+                <div class="app-header-left" id="navbarUserOn">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <a class="navbar-brand" href="index.html">MERGEN</a>
@@ -69,15 +69,10 @@
 
                                     </div>
                                 </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Q&A</a>
+                                <li class="nav-item" id="resourcesLink">
+                                    <a class="nav-link disabled" href="resources.html?id=">Resources</a>
                                 </li>
-                                <li class="nav-item" id="nav_Resources">
-                                    <a class="nav-link" href="/index.html">Resources</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Statistics</a>
-                                </li>
+
 
                             </ul>
                         </div>
@@ -88,33 +83,33 @@
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
                                 <div class="widget-content-left">
-                                    <div class="btn-group">
+                                    <div id="UserOn" class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img class="rounded-circle" src="assets/images/avatars/1.jpg" alt="" width="42">
-                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                            <div class="widget-content-left  ml-3 header-user-info">
+                                                <div class="widget-heading" id="usernameHolder">
+
+                                                </div>
+                                                <div class="widget-subheading" id="userRoleHolder">
+
+                                                </div>
+                                            </div>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                            <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                            <button type="button" tabindex="0" class="dropdown-item">Actions</button>
                                             <div tabindex="-1" class="dropdown-divider"></div>
-                                            <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
+                                            <a type="button" tabindex="0" class="dropdown-item" onclick="removeCookies();">Çıkış</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="widget-content-left  ml-3 header-user-info">
-                                    <div class="widget-heading">
-                                        Alina Mclourd
+                                <div id="UserOff" class="btn-group">
+                                    <div id="loginBar" class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                        </div>
+                                        <div class="widget-content-left">
+                                            <a class="nav-link" href="signup.html">Sign-Up</a>
+                                        </div>
                                     </div>
-                                    <div class="widget-subheading">
-                                        VP People Manager
-                                    </div>
-                                </div>
-                                <div class="widget-content-right header-user-info ml-3">
-                                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                        <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +173,7 @@
                                 </i>
                             </div>
                             <div>Q&A Web Service
-                                <div class="page-title-subheading">This is annnnnn Database Systems Project for Bil 372
+                                <div class="page-title-subheading">This is a Database Systems Project for Bil 372
                                 </div>
                             </div>
                         </div>
@@ -242,6 +237,39 @@
         });
     });
 </script>
+
+<script>
+    $( document ).ready(function() {
+
+        var CourseList = document.getElementById("coursesList");
+        var userCourseList = "";
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        if (window.location.href.includes("course.html")) {
+            var idParam = url.searchParams.get("id");
+            var resources = document.getElementById("resourcesLink");
+            resources.innerHTML = "<a class=\"nav-link\" href=\"resources.html?id=" + idParam + "\">Resources</a>\n";
+        }
+
+        $.ajax({
+            async: true,
+            crossDomain: true,
+            url: "https://mergen-etu.herokuapp.com/courses",
+            method: "GET",
+            headers: {},
+            success: function (data, textStatus, response) {
+                for (var i = 0; i < data.length; i++) {
+                    userCourseList += "<a class=\"dropdown-item\" href=\"" + "course.html?id=" + data[i].id + "\">" + data[i].courseName + "</a>"
+                }
+                CourseList.innerHTML = userCourseList;
+            },
+            error: function (xhr, status, err) {
+                alert("Error");
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
