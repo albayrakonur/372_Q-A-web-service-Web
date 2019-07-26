@@ -66,19 +66,15 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses</a>
                                     <div id="coursesList" class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+asdsadasda
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Q&A</a>
+                                    <a class="nav-link" href="addCourse.html">Add Course</a>
                                 </li>
-                                <li class="nav-item active" id="nav_Resources">
-                                    <a class="nav-link" href="/index.html">Resources</a>
+                                <li class="nav-item" id="resourcesLink">
+                                    <a class="nav-link" href="">Resources</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Statistics</a>
-                                </li>
-
                             </ul>
                         </div>
                     </nav>
@@ -172,7 +168,7 @@
                                 </i>
                             </div>
                             <div>Q&A Web Service
-                                <div class="page-title-subheading">This is annnnnn Database Systems Project for Bil 372
+                                <div class="page-title-subheading">This is a Database Systems Project for Bil 372
                                 </div>
                             </div>
                         </div>
@@ -331,6 +327,29 @@
             }
         });
 
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        var CourseList = document.getElementById("coursesList");
+        var userCourseList = "";
+        $.ajax({
+            async: true,
+            crossDomain: true,
+            url: "https://mergen-etu.herokuapp.com/courses",
+            method: "GET",
+            headers: {},
+            success: function (data, textStatus, response) {
+                for (var i = 0; i < data.length; i++) {
+                    userCourseList += "<a class=\"dropdown-item\" href=\"" + "course.html?id=" + data[i].id + "\">" + data[i].courseName + "</a>"
+                }
+                CourseList.innerHTML = userCourseList;
+            },
+            error: function (xhr, status, err) {
+                alert("Error");
+            }
+        });
     });
 </script>
 </body>
