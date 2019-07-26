@@ -16,12 +16,12 @@ $(document).ready(function() {
     var userRoleSection = document.getElementById("userRoleHolder");
     usernameSection.innerHTML = username;
     userRoleSection.innerHTML = userRole;
-    if (!username && userRole != "Instructors" ) {
+    if (!username && !userRole ) {
         document.getElementById("UserOn").style.display = "none";
         document.getElementById("navbarUserOn").style.display = "none";
         document.getElementById("UserOff").style.display = "inline";
 
-    }else if(username &&  userRole != "Instructors"){
+    }else if(username &&  userRole){
         document.getElementById("UserOff").style.display = "none";
         document.getElementById("UserOn").style.display = "inline";
         document.getElementById("navbarUserOn").style.display = "inline";
