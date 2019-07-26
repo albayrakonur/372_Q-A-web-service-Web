@@ -64,67 +64,6 @@ $(function() {
     });
 });
 
-$(function() {
-    $("#addResourcesForm").on("submit",function(e){
-        e.preventDefault();
-        var url_string = window.location.href;
-        var url = new URL(url_string);
-        var idParam = url.searchParams.get("id");
-        var file = document.getElementById("resourcesFile").files.item(0);
-        var tag = document.getElementById("resourcesTag").value;
-        var jsonData;
-        jsonData = "{"
-            + "\"filename\":" + "\"" + file.name + "\"" + ","
-            + "\"tag\":" + "\"" + tag + "\"" + "}" ;
-        $.ajax({
-            async: true,
-            crossDomain: true,
-            url: "https://mergen-etu.herokuapp.com/courses/" + idParam + "/resources",
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            processData: false,
-            data: jsonData,
-            success: function (data,textStatus,response) {
-                //console.log(data.id);
-                uploadFile();
-
-            },
-            error: function (xhr, status, err) {
-                alert("Dosya Eklenirken Hata Olustu.")
-            }
-        });
-    });
-});
-
-function uploadFile() {
-    var file = document.getElementById("resourcesFile");
-    var form = new FormData();
-    console.log(file);
-    form.append("uploadfile", file.files.item(0));
-    form.append("keyname", file.files.item(0).name);
-    $.ajax({
-        async: true,
-        crossDomain: true,
-        url: "https://mergen-etu.herokuapp.com/api/file/upload",
-        method: "POST",
-        headers: {},
-        processData: false,
-        contentType: false,
-        mimeType: "multipart/form-data",
-        data: form,
-        success: function (data,textStatus,response) {
-            //console.log(data.id);
-            alert("Resources Added.");
-            window.location.reload();
-        },
-        error: function (xhr, status, err) {
-            alert("Dosya Eklenirken Hata Olustu.")
-        }
-    });
-}
-
 (function($) {
 
     var tabs = $(".nav nav-justified li a");

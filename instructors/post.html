@@ -20,8 +20,8 @@
     =========================================================
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
-    <link href="./main.css" rel="stylesheet">
-    <link href="css/mystyle.css" rel="stylesheet">
+    <link href="../main.css" rel="stylesheet">
+    <link href="../css/mystyle.css" rel="stylesheet">
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -54,7 +54,7 @@
         </div>
         <div class="app-header__content">
             <div class="app-header__content">
-                <div class="app-header-left">
+                <div class="app-header-left" id="navbarUserOn">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <a class="navbar-brand" href="index.html">MERGEN</a>
@@ -68,16 +68,9 @@
 
                                     </div>
                                 </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Q&A</a>
-                                </li>
-                                <li class="nav-item" id="nav_Resources">
-                                    <a class="nav-link" href="/index.html">Resources</a>
-                                </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Statistics</a>
+                                    <a class="nav-link" href="addCourse.html">Add Course</a>
                                 </li>
-
                             </ul>
                         </div>
                     </nav>
@@ -87,33 +80,33 @@
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
                                 <div class="widget-content-left">
-                                    <div class="btn-group">
+                                    <div id="UserOn" class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img class="rounded-circle" src="assets/images/avatars/1.jpg" alt="" width="42">
-                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                            <div class="widget-content-left  ml-3 header-user-info">
+                                                <div class="widget-heading" id="usernameHolder">
+
+                                                </div>
+                                                <div class="widget-subheading" id="userRoleHolder">
+
+                                                </div>
+                                            </div>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                            <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                            <button type="button" tabindex="0" class="dropdown-item">Actions</button>
                                             <div tabindex="-1" class="dropdown-divider"></div>
-                                            <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
+                                            <a type="button" tabindex="0" class="dropdown-item" onclick="removeCookies();">Çıkış</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="widget-content-left  ml-3 header-user-info">
-                                    <div class="widget-heading">
-                                        Alina Mclourd
+                                <div id="UserOff" class="btn-group">
+                                    <div id="loginBar" class="widget-content-wrapper">
+                                        <div class="widget-content-left">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                        </div>
+                                        <div class="widget-content-left">
+                                            <a class="nav-link" href="signup.html">Sign-Up</a>
+                                        </div>
                                     </div>
-                                    <div class="widget-subheading">
-                                        VP People Manager
-                                    </div>
-                                </div>
-                                <div class="widget-content-right header-user-info ml-3">
-                                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                        <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -228,9 +221,70 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="" id="updatePostForm">
+                    <div class="position-relative row form-group">
+                        <label for="postTitle" class="col-sm-2 col-form-label">Post Title</label>
+                        <div class="col-sm-10">
+                            <input name="postTitle" id="newPostTitle" placeholder="" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="position-relative row form-group">
+                        <label for="postMessage" class="col-sm-2 col-form-label">Post Message</label>
+                        <div class="col-sm-10">
+                            <textarea name="postMessage" id="newPostMessage" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-secondary btn-block" data-dismiss="modal">Close</button>
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Update Post">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle2">Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="" id="updateCommentForm">
+                    <div class="position-relative row form-group">
+                        <label for="commentMessage" class="col-sm-2 col-form-label">Comment Message</label>
+                        <div class="col-sm-10">
+                            <input name="commentMessage" id="newCommentMessage" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-secondary btn-block" data-dismiss="modal">Close</button>
+                        <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" onclick=\"updateComment()\" value="Update Comment">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/scripts/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="application/javascript" src="assets/scripts/myscripts.js"></script>
+<script type="application/javascript" src="../assets/scripts/instructor.js"></script>
 <script>
 
     $( document ).ready(function() {
@@ -278,6 +332,8 @@
                 postSection.innerHTML = "<div class=\"main-card mb-3 card\">"
                     +" <div class=\"card-body\"><h5 class=\"card-title\">" + data.title + "</h5>" + data.message + ""
                     + "<small class=\"text-muted\">" + "<br/><br/>" + data.author + "<br/>" + data.createdAt +  "</small>"
+                    + "<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">Edit Post</button><br/>"
+                    + "<input class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" name=\"submit\" value=\"Delete Post\" onclick=\"deletePost()\">"
                     + "</div>"
                     + "</div>";
                 commentFunction();
@@ -306,6 +362,8 @@
                     comments += "<div class=\"main-card mb-3 card\">"
                         +" <div class=\"card-body\">" + data2[i].message + ""
                         + "<small class=\"text-muted\">" + "<br/><br/>" + data2[i].author + "<br/>" + data2[i].createdAt +  "</small>"
+                        + "<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" data-toggle=\"modal\" data-target=\"#exampleModalCenter2\">Edit Comment</button><br/>"
+                        + "<input class=\"btn btn-lg btn-primary btn-block\" id=\"buttonDelete\" type=\"submit\" name=\"submit\" value=\"Delete Comment\" onclick=\"deleteComment(" + data2[i].id + ")\">"
                         + "</div>"
                         + "</div>";;
                 }
