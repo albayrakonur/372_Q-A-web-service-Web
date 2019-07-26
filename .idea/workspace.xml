@@ -21,47 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/scripts/instructor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="859">
-              <caret line="163" column="50" lean-forward="true" selection-start-line="163" selection-start-column="50" selection-end-line="163" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instructors/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="125" column="65" selection-start-line="125" selection-start-column="55" selection-end-line="125" selection-end-column="65" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="90" column="96" selection-start-line="90" selection-start-column="96" selection-end-line="90" selection-end-column="96" />
+            <state relative-caret-position="488">
+              <caret line="135" column="22" lean-forward="true" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -143,16 +107,17 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="-1" />
-    <option name="width" value="959" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="-2" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,16 +125,10 @@
               <item name="372_Q-A-web-service-Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="372_Q-A-web-service-Web" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="372_Q-A-web-service-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="372_Q-A-web-service-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="instructors" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,16 +138,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/instructors" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/instructors" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/instructors" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -228,34 +185,26 @@
       <workItem from="1564045761558" duration="656000" />
       <workItem from="1564058193984" duration="1555000" />
       <workItem from="1564089083562" duration="5946000" />
-      <workItem from="1564103260796" duration="2261000" />
+      <workItem from="1564103121224" duration="939000" />
     </task>
-    <task id="LOCAL-00001" summary="new theme instructors">
-      <created>1564103408515</created>
+    <task id="LOCAL-00001" summary="remove old files">
+      <created>1564103157796</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1564103408515</updated>
+      <updated>1564103157796</updated>
     </task>
-    <task id="LOCAL-00002" summary="implementing instructor functions">
-      <created>1564125525603</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1564125525603</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57338000" />
+    <option name="totallyTimeSpent" value="56016000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.50054526" side_tool="true" weight="0.226254" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4989083" visible="true" weight="0.1736672" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4989083" visible="true" weight="0.1738255" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32969433" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -279,9 +228,8 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new theme instructors" />
-    <MESSAGE value="implementing instructor functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementing instructor functions" />
+    <MESSAGE value="remove old files" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove old files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/mystyle.css">
@@ -291,7 +239,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instructors/editCourse.html" />
+    <entry file="file://$PROJECT_DIR$/instructors/editCourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -320,7 +272,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instructors/addResources.html" />
+    <entry file="file://$PROJECT_DIR$/instructors/addResources.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="208" column="46" selection-start-line="208" selection-start-column="46" selection-end-line="208" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -328,6 +286,13 @@
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="90" column="96" selection-start-line="90" selection-start-column="96" selection-end-line="90" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -341,34 +306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scripts/instructorScripts.js" />
-    <entry file="file://$PROJECT_DIR$/instructors/signup.html" />
-    <entry file="file://$PROJECT_DIR$/instructors/login.html" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/aria.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="1002" column="22" selection-end-line="1724" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instructors/new-post.html" />
-    <entry file="file://$PROJECT_DIR$/instructors/resources.html" />
-    <entry file="file://$PROJECT_DIR$/assets/scripts/myscripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instructors/addCourse.html" />
-    <entry file="file://$PROJECT_DIR$/instructors/course.html" />
-    <entry file="file://$PROJECT_DIR$/assets/scripts/instructor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="163" column="50" lean-forward="true" selection-start-line="163" selection-start-column="50" selection-end-line="163" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -379,21 +316,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/assets/scripts/instructorScripts.js" />
+    <entry file="file://$PROJECT_DIR$/instructors/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="192" column="74" lean-forward="true" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instructors/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="176" column="46" selection-start-line="176" selection-start-column="46" selection-end-line="176" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/aria.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="1002" column="22" selection-end-line="1724" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instructors/new-post.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instructors/resources.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="90" column="96" selection-start-line="90" selection-start-column="96" selection-end-line="90" selection-end-column="96" />
+          <caret line="92" column="77" selection-start-line="92" selection-start-column="77" selection-end-line="92" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scripts/myscripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instructors/addCourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3162">
+          <caret line="186" column="63" selection-start-line="186" selection-start-column="47" selection-end-line="186" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instructors/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="76" selection-start-line="81" selection-start-column="76" selection-end-line="81" selection-end-column="76" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/instructors/course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="213" column="74" selection-start-line="213" selection-start-column="74" selection-end-line="213" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scripts/instructor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="135" column="22" lean-forward="true" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
         </state>
       </provider>
     </entry>

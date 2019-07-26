@@ -72,6 +72,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="addCourse.html">Add Course</a>
                                 </li>
+                                <li class="nav-item" id="resourcesLink">
+                                    <a class="nav-link" href="">Resources</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -174,7 +177,7 @@
                                 </i>
                             </div>
                             <div>Q&A Web Service
-                                <div class="page-title-subheading">This is annnnnn Database Systems Project for Bil 372
+                                <div class="page-title-subheading">This is a Database Systems Project for Bil 372
                                 </div>
                             </div>
                         </div>
@@ -240,10 +243,25 @@
             }
         });
     });
-    $( document ).ready(function() {7
-        var url_string = window.location.href;
-        var url = new URL(url_string);
-        var idParam = url.searchParams.get("id");
+    $( document ).ready(function() {
+        var CourseList = document.getElementById("coursesList");
+        var userCourseList = "";
+        $.ajax({
+            async: true,
+            crossDomain: true,
+            url: "https://mergen-etu.herokuapp.com/courses",
+            method: "GET",
+            headers: {},
+            success: function (data, textStatus, response) {
+                for (var i = 0; i < data.length; i++) {
+                    userCourseList += "<a class=\"dropdown-item\" href=\"" + "course.html?id=" + data[i].id + "\">" + data[i].courseName + "</a>"
+                }
+                CourseList.innerHTML = userCourseList;
+            },
+            error: function (xhr, status, err) {
+                alert("Error");
+            }
+        });
     });
 </script>
 </body>
