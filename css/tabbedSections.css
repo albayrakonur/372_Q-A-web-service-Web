@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700&subset=latin-ext');
+
+.wrap {
+  margin: 0 auto;
+	width: 1170px;
+      margin-bottom:50px;
+}
+
+ul.tabs {
+	width: 100%;
+	height: 80px;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+  padding: 0;
+}
+
+ul.tabs li {	
+	float: left;
+	width: 33.3333333%;
+}
+
+ul.tabs li a {
+	position: relative;
+	display: block;
+	height: 30px;
+	margin-top: 40px;
+	padding: 10px 0 0 0;
+	font-size: 12pt;
+	text-align: center;	
+	text-decoration: none;
+        font-weight: bold;
+	color: white;
+	background-color: #007bff;
+	box-sizing: content-box;
+	border: 0px solid #000000;
+	-webkit-box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+	   -moz-box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+	        box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+	-webkit-transition: padding 0.2s ease, margin 0.2s ease;
+     -moz-transition: padding 0.2s ease, margin 0.2s ease;
+			 -o-transition: padding 0.2s ease, margin 0.2s ease;
+			-ms-transition: padding 0.2s ease, margin 0.2s ease;
+					transition: padding 0.2s ease, margin 0.2s ease;
+}
+
+.tabs li:first-child a {
+	z-index: 5;
+}
+
+.tabs li:nth-child(2) a {
+	z-index: 4;
+}
+
+.tabs li:nth-child(3) a {
+	z-index: 3;
+}
+
+.tabs li:nth-child(4) a {
+	z-index: 2;
+}
+
+.tabs li:last-child a {
+	z-index: 1;
+  -webkit-box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+	   -moz-box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+	        box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+}
+
+ul.tabs li a:hover {
+	margin: 35px 0 0 0;
+	padding: 10px 0 5px 0;
+}
+	
+ul.tabs li a.active {
+	margin: 30px 0 0 0;
+	padding: 10px 0 10px 0;
+	background-color:#fbfbfb ;
+	color: dimgray;
+	/*color: #ff6831;*/
+	z-index: 6;
+	outline: none;
+}
+
+.group:before, .group:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.group:after {
+    clear: both;
+}
+
+#content {
+  width: 100%;
+  min-height: 300px;
+  margin: 0 auto;
+/*height: 320px;*/
+  padding: 32px 48px;
+  background-color: #f0f0f0;
+}
+
+div#content .data {
+  font-family: 'Roboto', sans-serif;
+  align-items:center;
+  /*font-weight: bold;*/
+  color: dimgray;
+  line-height: 26px;
+  font-size: 12pt;
+  margin: 0;
+	list-style-type: lower-greek;
+}
