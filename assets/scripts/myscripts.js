@@ -16,7 +16,7 @@ $( document ).ready(function() {
     var userRoleSection = document.getElementById("userRoleHolder");
     usernameSection.innerHTML = username;
     userRoleSection.innerHTML = userRole;
-    if (!username &&  userRole != "Student") {
+    if (!username &&  !userRole) {
         document.getElementById("UserOn").style.display = "none";
         document.getElementById("navbarUserOn").style.display = "none";
         document.getElementById("UserOff").style.display = "inline";
@@ -60,6 +60,19 @@ $( document ).ready(function() {
 
 $(function() {
     $("#addNewPostForm").on("submit",function(e){
+        var cookies = document.cookie.split(";");
+        var username = "";
+        var userRole = "";
+        for (var i = 0; i < cookies.length; i++) {
+            if (cookies[i].includes("username")) {
+                var usernameCookie = cookies[i].split("=");
+                username = usernameCookie[1];
+            }
+            if (cookies[i].includes(("userRole"))) {
+                var userRoleCookie = cookies[i].split("=");
+                userRole = userRoleCookie[1];
+            }
+        }
         var url_string = window.location.href;
         var url = new URL(url_string);
         var idParam = url.searchParams.get("id");
@@ -71,7 +84,7 @@ $(function() {
         jsonData = "{"
             + "\"title\":" + "\"" + title + "\"" + ","
             + "\"message\":" + "\"" + details + "\"" + ","
-            + "\"author\":" + "\"" + "Enes" + "\"" + "}" ;
+            + "\"author\":" + "\"" + username + "\"" + "}" ;
         //console.log("sa");
         $.ajax({
             async: true,
@@ -128,6 +141,19 @@ $(document).ready(function() {
 $(function() {
     $("#addNewCommentForm").on("submit",function(e) {
         e.preventDefault();
+        var cookies = document.cookie.split(";");
+        var username = "";
+        var userRole = "";
+        for (var i = 0; i < cookies.length; i++) {
+            if (cookies[i].includes("username")) {
+                var usernameCookie = cookies[i].split("=");
+                username = usernameCookie[1];
+            }
+            if (cookies[i].includes(("userRole"))) {
+                var userRoleCookie = cookies[i].split("=");
+                userRole = userRoleCookie[1];
+            }
+        }
         var url_string = window.location.href;
         var url = new URL(url_string);
         var qidParam = url.searchParams.get("qid");
@@ -136,7 +162,7 @@ $(function() {
         var message = document.getElementById("commentMessage").value;
         jsonData = "{"
             + "\"message\":" + "\"" + message + "\"" + ","
-            + "\"author\":" + "\"" + "Onur Albayrak" + "\"" + "}" ;
+            + "\"author\":" + "\"" + username + "\"" + "}" ;
 
         console.log(message);
         $.ajax({
